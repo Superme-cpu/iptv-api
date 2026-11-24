@@ -1,0 +1,14 @@
+# ZSpace Compose project name: akira-iptv
+# Service `iptv` pulls docker.io/akiralereal/iptv:latest (linux/amd64).
+services:
+  iptv:
+    image: akiralereal/iptv:latest
+    container_name: iptv
+    init: true
+    ports:
+      - "1905:1905"
+    environment:
+      - mport=1905
+    volumes:
+      - ./data:/iptv/data
+    restart: always
